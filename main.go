@@ -7,6 +7,10 @@ import (
 	"math/rand"
 	"net/http"
 	"os"
+
+	_ "embed"
+
+	"github.com/syumai/workers"
 )
 
 type WebringEntry struct {
@@ -14,13 +18,10 @@ type WebringEntry struct {
 	Url  string `json:"url"`
 }
 
-func main() {
-	webringRaw, err := os.ReadFile("webring.json")
-	if err != nil {
-		slog.Error("failed to read webring json file")
-		os.Exit(1)
-	}
+//go:embed webring.json
+var webringRaw []byte
 
+func main() {
 	var webring []WebringEntry
 	if err := json.Unmarshal(webringRaw, &webring); err != nil {
 		slog.Error("failed to unmarshal webring json file", "error", err)
@@ -99,7 +100,7 @@ func main() {
 		http.Redirect(w, r, webring[index].Url, http.StatusFound)
 	})
 
-	http.ListenAndServe(":8080", nil)
+	workers.Serve(nil)
 	fmt.Println("server is up and running at :8080")
 }
 

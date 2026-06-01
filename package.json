@@ -1,0 +1,11 @@
+{
+  "private": true,
+  "scripts": {
+    "build": "go run github.com/syumai/workers/cmd/workers-assets-gen -mode=go -o ./dist && GOOS=js GOARCH=wasm go build -o ./dist/app.wasm .",
+    "deploy": "wrangler deploy",
+    "dev": "wrangler dev"
+  },
+  "devDependencies": {
+    "wrangler": "^4.96.0"
+  }
+}
