@@ -9,6 +9,7 @@ import (
 	"os"
 	"slices"
 	"strings"
+	"unicode"
 
 	_ "embed"
 
@@ -23,6 +24,13 @@ type WebringEntry struct {
 //go:embed webring.json
 var webringRaw []byte
 var hostsToIgnore = []string{"ring.seggs.lol", "seggs.lol", "www.seggs.lol"}
+
+func initial(s string) string {
+	for _, r := range s {
+		return string(unicode.ToUpper(r))
+	}
+	return ""
+}
 
 func main() {
 	var webring []WebringEntry
@@ -46,14 +54,6 @@ func main() {
 			http.Error(w, "not found", http.StatusNotFound)
 			return
 		}
-
-		setCorsHeaders(w)
-		w.WriteHeader(http.StatusOK)
-		w.Write([]byte("uwu"))
-	})
-
-	http.HandleFunc("/webring", func(w http.ResponseWriter, r *http.Request) {
-		buildJsonResponse(w, http.StatusOK, webring)
 	})
 
 	http.HandleFunc("/redirect", func(w http.ResponseWriter, r *http.Request) {
