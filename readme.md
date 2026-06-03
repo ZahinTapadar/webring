@@ -4,7 +4,25 @@ a dead simple [webring](https://en.wikipedia.org/wiki/Webring) api server for th
 
 join our [discord server](https://discord.gg/gqyV3nyjwE) to meet cool engineers and hackers :p - please text @ni5arga or @datavorous_ on discord for approval or if you face any issues while joining. 
 
+<a href="https://discord.gg/gqyV3nyjwE">
+  <img src="https://dcbadge.vercel.app/api/server/gqyV3nyjwE?style=flat-square" alt="Discord">
+</a>
 
+<br><br>
+
+<a href="https://discord.gg/gqyV3nyjwE">
+  <img src="https://img.shields.io/badge/Join%20the%20Community-5865F2?style=for-the-badge&logo=discord&logoColor=white" />
+</a>
+
+<a href="https://discord.gg/gqyV3nyjwE">
+  <img src="https://img.shields.io/badge/Get%20Help-5865F2?style=for-the-badge&logo=discord&logoColor=white" />
+</a>
+
+<a href="https://discord.gg/gqyV3nyjwE">
+  <img src="https://img.shields.io/badge/Meet%20Hackers-5865F2?style=for-the-badge&logo=discord&logoColor=white" />
+</a>
+
+</div>
 
 ## how to join the webring?
 
