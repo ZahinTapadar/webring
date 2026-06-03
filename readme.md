@@ -9,6 +9,7 @@ add your entry to [`webring.json`](./webring.json) and open a pr:
 ```json
 {
   "name": "your-name",
+  "gh": "your-github-username",
   "url": "https://your-site.com"
 }
 ```
