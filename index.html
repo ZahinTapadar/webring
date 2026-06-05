@@ -175,13 +175,11 @@
         position: relative;
         display: flex;
         flex-direction: column;
-        gap: 0.75rem;
         padding: 1.15rem;
+        min-height: 200px;
         border: 3px solid var(--overlay);
         border-radius: var(--radius);
         background: var(--surface);
-        text-decoration: none;
-        color: var(--text);
         overflow: hidden;
         transition: border-color 0.18s ease, transform 0.18s ease, background 0.18s ease;
       }
@@ -192,6 +190,23 @@
       }
       .card:hover .name { color: var(--foam); }
       .card:hover .arrow { opacity: 1; transform: none; }
+
+      .card-link {
+        text-decoration: none;
+        color: var(--text);
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+      }
+
+      .gh-link {
+        margin-top: auto;
+        width: fit-content;
+        color: var(--muted);
+        transition: color 0.18s ease;
+      }
+      .gh-link:hover { color: var(--iris); }
+      .gh-link svg { display: block; }
 
       .avatar {
         position: relative;
